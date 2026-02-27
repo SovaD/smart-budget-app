@@ -1,0 +1,435 @@
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+  background-color: #f4f7f6; 
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  max-width: 900px; 
+  margin: 50px auto;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+}
+.main-content {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start; 
+}
+
+.left-column, .right-column {
+  flex: 1; 
+  width: 100%;
+}
+
+/* Стили для блока баланса */
+.balance-container {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.balance-total {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 10px 0;
+}
+
+.balance-details {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.balance-income {
+  color: #2ed573;
+  font-weight: 500;
+}
+
+.balance-expense {
+  color: #ff4757;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column; 
+  }
+  
+  .app-container {
+    margin: 20px;
+    padding: 20px;
+  }
+}
+
+.title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.form-container {
+  background: #fdfdfd;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid #f0f0f0;
+}
+
+.form-container h3 {
+  margin-top: 0;
+  color: #4a4a4a;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #666;
+}
+
+.form-control {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #7b2cbf;
+  box-shadow: 0 0 0 3px rgba(123, 44, 191, 0.1);
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+  margin-top: 10px;
+}
+
+.btn:active {
+  transform: scale(0.98); 
+}
+
+.btn-expense {
+  background-color: #ff4757; 
+}
+.btn-expense:hover {
+  background-color: #ff6b81;
+}
+
+.btn-income {
+  background-color: #2ed573; 
+}
+.btn-income:hover {
+  background-color: #7bed9f;
+}
+
+.amount-input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.amount-input-group input {
+  flex: 2;
+}
+
+.amount-input-group select {
+  flex: 1; 
+}
+
+/* Стили для выбора  валюты  */
+.currency-selector {
+  margin-bottom: 20px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-family: inherit;
+  font-weight: 500;
+  color: #2c3e50;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* --- Стили для Истории транзакций --- */
+.history-container {
+  margin-top: 30px;
+  background: #ffffff;
+  padding: 20px 30px;
+  border-radius: 15px;
+  border: 1px solid #f0f0f0;
+}
+
+.history-container h3 {
+  color: #2c3e50;
+  margin-top: 0;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.transaction-list {
+  list-style-type: none; 
+  padding: 0;
+  margin: 0;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fdfdfd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border-right: 1px solid #eee;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.transaction-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.transaction-item.income {
+  border-left: 5px solid #2ed573;
+}
+
+.transaction-item.expense {
+  border-left: 5px solid #ff4757;
+}
+
+.transaction-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-info strong {
+  color: #333;
+  font-size: 1.05rem;
+}
+
+.transaction-info small {
+  color: #888;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.transaction-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.transaction-amount {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.delete-btn {
+  background-color: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: bold;
+  opacity: 0; 
+  transition: opacity 0.3s;
+}
+
+.transaction-item:hover .delete-btn {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .delete-btn {
+    opacity: 1;
+  }
+}
+
+/* --- Стили для панели управления списком (Фильтры) --- */
+.list-controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  flex-wrap: wrap; 
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1; 
+  min-width: 150px; 
+  gap: 5px;
+}
+
+.control-group label {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.control-group input,
+.control-group select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.control-group input:focus,
+.control-group select:focus {
+  outline: none;
+  border-color: #7b2cbf;
+}
+
+/* --- Стили для Лимита расходов --- */
+.limit-container {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.limit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.limit-header h4 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.limit-input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.limit-input-group input {
+  width: 100px;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.limit-input-group button {
+  background: #7b2cbf;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.progress-bg {
+  width: 100%;
+  height: 12px;
+  background-color: #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease-in-out, background-color 0.5s ease;
+}
+
+.limit-status {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.warning-text {
+  color: #ff4757;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+/* --- Стили для иконок и аналитики --- */
+.transaction-info-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.category-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.analytics-container {
+  background: #ffffff;
+  padding: 20px 30px;
+  border-radius: 15px;
+  border: 1px solid #f0f0f0;
+  margin-top: 20px;
+}
+.edit-btn {
+  background-color: #feca57;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.transaction-item:hover .edit-btn { opacity: 1; }
+
+@media (max-width: 768px) {
+  .edit-btn { opacity: 1; }
+}
